@@ -1,0 +1,14 @@
+{
+  "title": "Usage Format",
+  "cells": [
+    {
+      "type": "text",
+      "data": "This usage comment format is clean and easy to read. It’s a valuable inclusion in any script with multiple options."
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "# Usage:\n#   command [ --help ]\n#           [ --option \"...\" ]\n#           [ --someOtherOption \"...\" ]\n#           [ --version ]"
+    }
+  ]
+}

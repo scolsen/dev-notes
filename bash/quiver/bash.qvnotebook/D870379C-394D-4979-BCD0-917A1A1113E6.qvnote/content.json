@@ -1,0 +1,13 @@
+{
+  "title": "Bash Colors",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "The following reference provides bash color sequences."
+    },
+    {
+      "type": "markdown",
+      "data": "| Sequence | Color |\n|----------|-------|\n|\\033[30m  |Black  |\n|\\033[31m  |Red    |\n|\\033[32m  |Green  |"
+    }
+  ]
+}

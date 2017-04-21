@@ -1,0 +1,23 @@
+{
+  "title": "Move Files into Current Working Directory into Parent Directory",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Move all files contained in a child directory into the current working directory."
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "find . -maxdepth 1 -exec mv {} .. \\;"
+    },
+    {
+      "type": "text",
+      "data": "Alternatively:"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "mv * ../"
+    }
+  ]
+}

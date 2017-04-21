@@ -1,0 +1,26 @@
+{
+  "title": "Process Command Line Options",
+  "cells": [
+    {
+      "type": "text",
+      "data": "This is a common idiom for processing command line options on invocation of a shell script. We use&nbsp;<code>​</code>​the&nbsp;<code>​test</code>​ command to evaluate whether the argument count <code>​$#</code>&nbsp;is greater than 0.<br>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "while test $# -gt 0\ndo \n  case $1 in\n    --option | --o | --otherOptionAlias )\n      myFunction\n      myvariable=1\n      ;;\n    --help | --h | --etc )\n      helpFunction\n      exit 0\n      ;;\n    -* )\n      error \"Unrecognized option: $1\"\n      ;;\n    * )\n    break \n    ;;\n  esac\n  shift \ndone "
+    },
+    {
+      "type": "text",
+      "data": "The options provided in this code are samples. The case blocks provide some common execution patterns when an option is matched; run some function, set some variable value, or run some function and exit. The <code>​-*</code>​ command matches any unrecognized options and throws an error.&nbsp;The last case matches any output that is not a recognized option and breaks.&nbsp;"
+    },
+    {
+      "type": "text",
+      "data": "We shift after running the case to move the next argument up in the list. The shift is important, as it also ensures our condition for the while statement eventually hits 0."
+    },
+    {
+      "type": "text",
+      "data": "Courtesy of <i>Classic Shell Scripting - </i>Arnold Robbins and Nelson Beebe"
+    }
+  ]
+}

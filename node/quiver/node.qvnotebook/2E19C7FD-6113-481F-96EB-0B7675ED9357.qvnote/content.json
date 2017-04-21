@@ -1,0 +1,31 @@
+{
+  "title": "CLI with Interactive and Noninteractive Modes",
+  "cells": [
+    {
+      "type": "text",
+      "data": "A basic use of readline and process to run a CLI in either an interactive or noninteractive mode.&nbsp;"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "const fs = require('fs');\nconst readline = require('readline');\n\nconst commands = {\n  \"exit\" : exitFunction,\n  \"option\" : myFunction\n}\n\nfunction parseArgs(arguments){\n\tlet cmdarr;\n\tif(Array.isArray(arguments) !== true){\n\t\tcmdarr = arguments.split(' ');\n\t} else {\n\t\tcmdarr = arguments;\n\t}\n\tlet c = cmdarr[0];\n\tlet opts = cmdarr.slice(1, cmdarr.length);\n\tif(options.hasOwnProperty(c)){\n\t\tcommands[c](opts);\n\t} else if (c === 'exit' || c === 'Exit' || c === 'quit' || c === 'Quit'){\n\t\tconsole.log(\"Exiting\");\n\t\tprocess.exit(0);\n\t} else {\n\t\tconsole.log(\"Unrecognized command: \" + c);\n\t}\t\n}\n\nfunction interactive(){\n\tconst mrl = readline.createInterface({\n\t\tinput: process.stdin,\n\t\toutput: process.stdout,\n\t\tprompt: '[myprompt] '\n\t  });\n\t  mrl.prompt();\n\t  mrl.on('line', (line)=>{\n\t    let clean = line.replace(/\\s{2,}/g, ' ');\n\t    parseArgs(clean.trim());\n\t    mrl.prompt();\n\t  });\n}\n\nfunction main(){\n\tif(process.argv.length <= 2){\n\t  interactive();  \n\t} else {\n\t\tlet args = process.argv.slice(2, args.length);\n      parseArgs(args); \n\t}\t\n}\n\nmain();"
+    },
+    {
+      "type": "text",
+      "data": "This CLI provides interactive and noninteractive modes. When the interactive mode is invoked, arguments are read on line input and must be split into an array. In interactive mode, we utilize node’s process module.&nbsp;"
+    },
+    {
+      "type": "text",
+      "data": "A commands object enables the CLI to run a function, passing the remainder arguments as the function arguments, based on the first input command by the user.&nbsp;"
+    },
+    {
+      "type": "text",
+      "data": "You can also export the main function as an anonymous function for invocation in some other module:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "module.exports = function (){\n\tif(process.argv.length <= 2){\n\t  interactive();  \n\t} else {\n\t\tlet args = process.argv.slice(2, args.length);\n      parseArgs(args); \n\t}\t\n}"
+    }
+  ]
+}
