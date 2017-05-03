@@ -1,6 +1,6 @@
-# Locations of shells in common environments.
+Locations of shells in typical environments.
 * Bourne
-* * /bin/sh 
+* * /bin/sh
 * * /usr/bin/sh
 * Bash
 * * /bin/bash

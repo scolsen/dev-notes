@@ -1,4 +1,4 @@
-A simpleway to add an element to an array in bash, equivalent of push.
+A simple way to add an element to an array in bash, equivalent of push.
 
 ```sh
 ARR=()
