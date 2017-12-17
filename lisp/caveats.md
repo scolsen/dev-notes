@@ -19,5 +19,4 @@ You can write anonymous functions in lisp using `lambda`
 (remove-if-not #'(lambda (x) (= 0 (mod x 2))) '(1 2 3 4 5 6 7 8 9))
 ;; Anon func: (lambda (x) (= 0 (mod x 2)))
 ```
-
-
+Even control statements, such as if and loops, evaluate to a value in lisp.
