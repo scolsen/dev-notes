@@ -11,7 +11,7 @@ function fakeAjax(url,cb) {
   console.log("Requesting: " + url);
 
   setTimeout(function(){
-    cb(fake_responses[url]);
+     cb(fake_responses[url], url);
   },randomDelay);
 }
 
@@ -27,9 +27,13 @@ function addRes(key, text) {
 // The old-n-busted callback way
 
 function getFile(file) {
-    fakeAjax(file,function(text){
-      addRes(file, text)
-        if(file == "file1")
+    fakeAjax(file,function(text, url){
+      gotResponses[url] = text;
+      if(Object.keys(gotResponses).length == 3) {
+          output(gotResponses["file1"]);
+          output(gotResponses["file2"]);
+          output(gotResponses["file3"]);
+        }
     });
 }
 
