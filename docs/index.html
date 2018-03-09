@@ -17,23 +17,18 @@ hero: true
 	{%endfor%}
 	<div class="wrapper">
 		<h1 class="page-title" style="margin-bottom:15px;">Welcome</h1>
-  	<p class="page-description">This is the personal site of Scott Christopher Olsen. I post essays and scribblings on a variety of topics that interest me, particularly in the areas of philosophy and literature. While you're here, check out some <a href="{{site.baseurl}}/notes.html">Notes</a> or <a href="{{site.baseurl}}/essays.html">Essays</a>. You can contact me at <a href="mailto:scg.olsen@gmail.com?subject=Hello, Scott">scg.olsen@gmail.com</a>.</p>
-	{% for yr in years %}	
-            <div style="width:100%; float:left;">
-            <h1 class="page-title" style="font-size:16px;font-weight:600;width:20%;float:left;margin-bottom:15px;font-style:italic;">{{ yr }}</h1>
-            <ul class="post-list">
-		{% for post in site.posts %}
-                {% capture year %}{{ post.date | date: '%Y'}}{% endcapture %}
-		{% if year == yr and post.language == 'en' %}
-		<div class="post-module">
-	                 <h3 class="post-title-link"><a  href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-	                  <p class="post-abstract">{{ post.abstract | truncatewords: 100 }}</p>
-	                  <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-	              </div>
-		{% endif %}
+  	<p class="page-description">A stream of personal notes and observations follows.</p>
+      <div style="width:100%; float:left;">
+        <ul class="post-list">
+		    {% for post in site.posts %}
+          {{ post.date | date: '%Y'}}
+		      <div class="post-module">
+	          <h3 class="post-title-link"><a  href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+	            <p class="post-abstract">{{ post.abstract | truncatewords: 100 }}</p>
+	              <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+	        </div>
 		{% endfor %}
 		</ul>
-                </div> 
-                {% endfor %}
+    </div> 
 	</div>
 </div>
