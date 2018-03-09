@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="post">
+	<div class="wrapper">
+		{% if page.fname %}
+                    {% include language.html %}
+                {% endif %}
+                <header class="post-header">
+			<h1 class="post-title">{{ page.title }}</h1>
+		</header>
+		<article class="post-content">
+			{{ content }}
+		</article>
+		<span class="post-meta">
+			<div class="post-author">
+				<p>{{ page.date | date: "%b %-d, %Y" }}</p>
+			</div>
+		</span>
+	</div>
+</div>

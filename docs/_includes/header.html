@@ -1,0 +1,17 @@
+<header id="site-header" class="site-header">
+    <nav class="site-nav">
+      <div class="trigger">
+        <a class="site-title" href="{{ site.baseurl }}/">olsen.works</a>
+        <a class="page-link" href="{{site.baseurl}}/essays.html"> Essays</a>
+        <!--<a class="page-link" href="{{site.baseurl}}/fiction.html"> Fiction</a>-->
+        <a class="page-link" href="{{site.baseurl}}/notes.html"> Notes</a>
+        <a class="page-link" href="mailto:scg.olsen@gmail.com?subject=Hello, Scott"> Contact</a>
+        {% for page in site.pages %}
+        {% if page.title == 'About' %}
+        <a class="page-link" href="{{ page.url | prepend: site.baseurl }}"> {{ page.title }}</a>
+        {% endif %}
+        {% endfor %}
+        <a class="page-link" href="http://www.linkedin.com/in/scgolsen">LinkedIn</a>
+    </nav>
+  </div>
+</header>

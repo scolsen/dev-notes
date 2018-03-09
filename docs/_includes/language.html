@@ -1,0 +1,9 @@
+<div class="language-select">
+    <p>Language:
+    {% if page.language == 'en' %}
+        <strong>en</strong><a href="{{ page.fname }}-no.html">no</a>
+    {% else %}
+    <strong>no</strong><a href="{{ page.fname }}.html">en</a>
+    {% endif %}
+    </p>
+</div>
