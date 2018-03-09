@@ -1,0 +1,210 @@
+/////reset/////
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+/////animations/////
+@keyframes opLoad{
+    from {opacity:0;}
+    to{opacity:1;}
+}
+
+
+//////basic styling/////
+body {
+    font-family: $font-body;
+    font-size: $font-body-size;
+    line-height: $body-line-height;
+    font-weight: 200;
+    color: $body-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
+}
+
+/////vertical rythym/////
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
+}
+
+/////images/////
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/////figures/////
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $small-font-size;
+    float:left;
+    width:100%;
+    padding:10px;
+    font-family: $font-heading;
+}
+
+/////lists/////
+ul, ol {
+    margin-left: $spacing-unit;
+}
+
+li {
+    > ul,
+    > ol {
+         margin-bottom: 0;
+    }
+}
+
+/////headings/////
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-heading;
+    font-weight: 300;
+}
+
+h1{
+        float:left;
+}
+
+/////links/////
+a {
+    color: $link-color;
+    transition:color, background-color;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+    background-color: #fff;
+    &:visited {
+        //
+    }
+
+    &:hover {
+        transition: color, background-color;
+        transition-duration: 300ms;
+        transition-timing-function: ease;
+        color:#fff;
+        background-color:#000;
+   }
+}
+
+/////blockquotes/////
+blockquote {
+    font-size: 9px;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+/////code formatting/////
+pre
+{
+    font-size: 12px;
+    border-top: 1px solid $grey-color-light;
+    border-bottom: 1px solid $grey-color-light;
+    //background-color: #eef;
+    width:80%;
+    float: right;
+    line-height:16px;
+    font-family:$font-code;
+}
+
+code {
+    padding: 1px 5px;
+    font-family:$font-code;
+}
+
+pre {
+    padding-top: 8px;
+    padding-bottom:8px;
+    overflow-x: scroll;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+        width:100%;
+    }
+}
+
+/////wrappers/////
+.wrapper {
+    animation-name: opLoad;
+    animation-duration:500ms;
+    animation-timing-function: linear;
+    animation-direction:forward;
+    max-width: 44%;
+    margin-left: 14%;
+    margin-right:50%;
+    @extend %clearfix;
+    @include media-query($small-desktop) {
+        max-width: 44%;
+        margin-right:40%;
+    }
+    @include media-query($on-palm) {
+        max-width: 80%;
+        margin-right:10%;
+        margin-left:10%;
+    }
+}
+
+.hero-wrapper{
+    animation-name: opLoad;
+    animation-duration:500ms;
+    animation-timing-function: linear;
+    animation-direction:forward;
+    max-width:44%;
+    margin-left:14%;
+    margin-bottom:110px;
+    margin-top:50px;
+    @include media-query($small-desktop) {
+       display:none; 
+    }
+    @include media-query($on-palm) {
+       display:none; 
+    }
+}
+
+.home-wrapper {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 16));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    @extend %clearfix;
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
+}
+
+/////clearfix/////
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/////icons/////
+.icon {
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        path {
+            fill: $grey-color;
+        }
+    }
+}
