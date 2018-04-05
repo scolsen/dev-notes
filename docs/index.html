@@ -1,34 +1,19 @@
 ---
 layout: default
 title: "home"
-hero: true
 ---
 {% capture now %}{{ 'now' | date: '%Y' }}{% endcapture %}
 {% assign years = "2018,2017" | split: ',' %}
 <div class="home">
-        {% for page in site.pages %}
-	{% if page.render contains 'project' %}
-	<div class="hero-wrapper">
-                <h1 class="post-title-hero"><a  href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h3>
-		<p class="hero-description">{{ page.abstract }}</p>
-		<a class="continue-link-hero" href="{{ page.url | prepend: site.baseurl }}">Explore</a>
+  <div class="wrapper">
+      {% for post in site.posts %}
+        <div class="post-list-container">
+          <a class="post-list-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | truncatewords: 40 }}</a>
+          <p class="post-list-category">({{ post.category }})</p>
+          <p class="post-list-date">{{ post.date | date: "%b %-d, %Y" }}</p>
         </div>
-	{%endif%}
-	{%endfor%}
-	<div class="wrapper">
-		<h1 class="page-title" style="margin-bottom:15px;">Welcome</h1>
-  	<p class="page-description">A stream of personal notes and observations follows.</p>
-      <div style="width:100%; float:left;">
-        <ul class="post-list">
-		    {% for post in site.posts %}
-          {{ post.date | date: '%Y'}}
-		      <div class="post-module">
-	          <h3 class="post-title-link"><a  href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-	            <p class="post-abstract">{{ post.abstract | truncatewords: 100 }}</p>
-	              <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-	        </div>
-		{% endfor %}
-		</ul>
-    </div> 
-	</div>
+        {{ post.content }}
+        <p style="text-align:center;">***</p>
+      {% endfor %}
+  </div>
 </div>

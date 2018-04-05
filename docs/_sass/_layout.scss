@@ -270,7 +270,7 @@
 }
 
 .post-title-list a{
-    font-size:$heading-size ;
+    font-size: $heading-size;
     line-height:$body-line-height;
     float:left;
     width:100%;
@@ -329,6 +329,8 @@
 .post-abstract {
     font-size: $small-font-size;
     line-height: $small-line-height;
+    background-color: #000;
+    color: #fff;
     margin-bottom:0;
     @include media-query($on-laptop) {
      //
@@ -401,9 +403,9 @@
 }
 
 .post-title {
-     font-family:$font-heading;
-     font-size:$heading-size;
-     color:$black-color;
+     font-family: $font-heading;
+     font-size: $heading-size;
+     color: #0099cc;
     @include media-query($on-laptop) {
         //
     }
@@ -550,4 +552,40 @@ width:100%;
 
 .language-select a {
     margin-left: 10px;
+}
+
+//post-list
+
+.post-list-container {
+  border-bottom: solid 1px #000;
+  width: 100%;
+  float: left;
+  padding-bottom: 0;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.post-list-title {
+     font-family: $font-heading;
+     font-size: 12px;
+     color: #0099cc;
+     float: left;
+     margin-bottom: 0;
+    @include media-query($on-laptop) {
+        //
+    }
+}
+
+.post-list-category {
+ font-size: 9px;
+ margin-left: 20px;
+ float: left;
+ margin-bottom: 0;
+}
+
+.post-list-date {
+ font-size: 12px; 
+ float: left;
+ margin-left: 20px;
+ margin-bottom: 0;
 }

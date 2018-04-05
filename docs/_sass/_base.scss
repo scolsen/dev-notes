@@ -154,6 +154,10 @@ pre {
     }
 }
 
+.home .wrapper pre {
+  float: none;   
+}
+
 .hero-wrapper{
     animation-name: opLoad;
     animation-duration:500ms;

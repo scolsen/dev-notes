@@ -1,6 +1,6 @@
 (* SML Record Syntax *)
 
-(* record types provide labels for thier components *)
+(* Record types provide labels for thier components *)
 (* Binding particular record compositions to a type is a frequent pattern *)
 
 type address = { number: int, street: string, state: string}

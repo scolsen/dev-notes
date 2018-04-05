@@ -1,9 +1,9 @@
-(* Binding values *)
+(* Binding Values *)
 
-(* implicit type *)
+(* Implicit type *)
 
 val r = 3
 
-(* explicit type *)
+(* Explicit type *)
 
 val r : int = 3

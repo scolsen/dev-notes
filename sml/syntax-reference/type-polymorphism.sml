@@ -1,6 +1,6 @@
-(* sml supports polymorphic types *)
-(* For example, to define identity, which is defined for infinitely many types *)
-val I : 'a->'a = fn x => x
+(* Polymorphic Types *)
+(* For example, to define identity, which is defined for infinitely many types: *)
+val I : 'a -> 'a = fn x => x
 
 (*Named version *)
 fun I (x:'a):'a = x

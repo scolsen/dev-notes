@@ -1,4 +1,4 @@
-(* SML supports Product Types *)
+(* Product Types *)
 
 (* Tuples are collections of N values of the any type *)
 (* Tupes have the type signature type * type * type ... *)
@@ -15,12 +15,12 @@ val u: unit = ()
 (* One value tuples do not exist *)
 
 (* Tuples may also contain expressions, which are evaluated from left to right *)
-val e: int * int = (3 + 2, 2 + 3)
+val e: int * int = (3 + 2, 2 + 3) (* (5, 5)  *)
 
 (* Getting Tuple values. *)
 (* The convienence function #i can access a tuple element directly *)
 (* E.g. in a function that takes a tuple of args #1 will reference the first element of the tuple *)
 (* This syntax is discouraged *)
-fun d (p:real*real):real = ((#1 p)+(#2 p), (#1 p)*(#2 p))
+fun f (p:real*real):real = ((#1 p)+(#2 p), (#1 p)*(#2 p))
 
 
