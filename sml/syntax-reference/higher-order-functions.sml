@@ -63,4 +63,3 @@ fun stage_reduce (unit, oper) =
     red
   end
 
-
