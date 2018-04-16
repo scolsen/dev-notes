@@ -27,3 +27,41 @@ signature QUEUE =
 
 (* we can conceive of signatures as less elegant type classes. *)
 
+(* Structures implement signatures. The types of structures are signatures. *)
+(* Structures follow the syntax struct <declarations> end. *)
+(* Struct declarations can be type declarations, datatype declarations,
+   exception declarations, or a value declaration. *)
+
+structure Queue = 
+  struct 
+    type 'a queue = 'a list * 'a list
+    exception Empty
+    val empty = (nil, nil)
+    fun insert (x, (b,f)) = (x :: b, f)
+    fun remove (nil, nil) = raise Empty
+      | remove (bs, nil) = remove (nil, rev bs)
+      | remove (bs, f::fs) = (f, (bs, fs))
+  end
+
+(* funs are technically val rec bindings *)
+
+(* structure components are accessed using identifiers. *)
+
+Queue.empty
+val q = Queue.insert (1, ([1,2,3], [1,2,3]))
+
+(* We can abbreviate strucutre definitions by binding them to other structures *)
+
+structure Q = Queue
+
+(* We can also open structures to load their bindings directly into the environment. *)
+
+open Queue 
+
+(* we can then simply call empty, insert, etc. *)
+(* open can take multiple structures, if there are overlapping definitions *)
+(* the last loaded structure's definitions will be used in the case of a conflict. *)
+(* Open will also shadow names in the environment. *)
+(* use open very sparingly. *)
+
+
